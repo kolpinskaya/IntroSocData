@@ -14,9 +14,9 @@
 
 
 - Class: exact_question
-  Output: 1. What is the mode in the no_albums variable?
+  Output: 1. What is the mode in the no_album variable?
   CorrectAnswer: 8
-  AnswerTests: omnitest(correctVal=8)
+  AnswerTests: omnitest(correctVal = 8)
   Hint: Think most occuring.
 
 - Class: cmd_question

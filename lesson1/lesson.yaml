@@ -1,0 +1,82 @@
+- Class: meta
+  Course: Introduction to Social Data
+  Lesson: Mean, Median, Mode
+  Author: Adina Pintilie
+  Type: Standard
+  Organization: Q-Step Exeter
+  Version: 2.4.1
+
+- Class: text
+  Output: Ready to get started? Press enter when you are!
+
+- Class: text
+  Output: Typing skip() allows you to skip the current question. Typing play() lets you experiment with R on your own; swirl will ignore what you do... UNTIL you type nxt() which will regain swirl's attention. Typing bye() causes swirl to exit. Your progress will be saved. Typing main() returns you to swirl's main menu. Typing info() displays these options again.
+
+
+- Class: exact_question
+  Output: 1. What is the mode in the no_albums variable?
+  CorrectAnswer: 8
+  AnswerTests: omnitest(correctVal=8)
+  Hint: Think most occuring.
+
+- Class: cmd_question
+  Output: 2. With a command, find the mean of the no_album variable.
+  CorrectAnswer: mean(music$no_album)
+  AnswerTests: omnitest(correctExpr='mean(music$no_album)')
+  Hint: Type ?mean.
+
+- Class: text_question
+  Output: 3.Between mode and mean, which is the better measure of spread for the no_albums variable?
+  CorrectAnswer: mean
+  AnswerTests: omnitest(correctVal='mean')
+  Hint: Think about the difference between them.
+
+- Class: mult_question
+  Output: 4. What is the difference between median and mean?
+  AnswerChoices: Median is the middle value when ordered by rank & mean is the average of all the values;Median is the average of all the values & mean is the middle value when ordered by rank;Median is the most occuring value & mean is the middle value when ordered by rank
+  CorrectAnswer: Median is the middle value when ordered by rank & mean is the average of all the values
+  AnswerTests: omnitest(correctVal='Median is the middle value when ordered by rank & mean is the average of all the values')
+  Hint: Type ?mean and ?mode if you're stuck.
+
+- Class: cmd_question
+  Output: 5. Find out the average number of tours performed by all the artists in the music dataset using a comand.
+  CorrectAnswer: mean(na.omit(music$no_tours))
+  AnswerTests: any_of_exprs('mean(na.omit(music$no_tours))', 'mean( na.omit (music$no_tours) )')
+  Hint: Remember to omit the NA!
+
+- Class: cmd_question
+  Output: 6. Using a command, table the number of awards by gender in the dataset.
+  CorrectAnswer: table(music$no_awards, music$gender)
+  AnswerTests: omnitest(correctExpr='table(music$no_awards, music$gender)')
+  Hint: Type ?table.
+
+- Class: cmd_question
+  Output: 7. Using one comand, visualise a variable summary for the music data set.
+  CorrectAnswer: summary(music)
+  AnswerTests: omnitest(correctExpr='summary(music)')
+  Hint: Type ?summary.
+
+- Class: text_question
+  Output: 8. Looking at the summary, which is the best measure of spread for no_awards?
+  CorrectAnswer: median
+  AnswerTests: omnitest(correctVal='median')
+  Hint: Consider the max. value. Is it skewing the data?
+
+- Class: text
+  Output: Now let's test yout mental maths. It's probably better than you think!
+
+- Class: text_question
+  Output: 9. What kind of mode does this string have? 1, 3, 3, 3, 4, 4, 6, 6, 6, 9
+  CorrectAnswer: bimodal
+  AnswerTests: any_of_exprs('bimodal', 'multimodal')
+  Hint: Count the modes.
+
+- Class: mult_question
+  Output: The median of the numbers 6, 3, 17, 28, 37, 6, 24 and x is 16. What are the mean and mode?
+  AnswerChoices: Mean=16, mode=6;Mean=17, mode=3;Mean=17, mode=6;Mean=20, mode=17
+  CorrectAnswer: Mean=17, mode=6
+  AnswerTests: omnitest(correctVal= 'ANS')
+  Hint: First find the value of x.
+
+- Class: text
+  Output: All done here! Well done!
